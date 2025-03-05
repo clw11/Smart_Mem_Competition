@@ -1300,9 +1300,9 @@ class MFPmodel(object):
             test_df = feather.read_dataframe(os.path.join(self.test_data_path, file))
             test_df["sn"] = test_df.index.get_level_values(0)
             test_df["log_time"] = test_df.index.get_level_values(1)
-            grouped = test_df.groupby('sn')
-            filtered_groups = [self.filter_condition(group) for _, group in grouped]
-            test_df = pd.concat(filtered_groups)
+            # grouped = test_df.groupby('sn')
+            # filtered_groups = [self.filter_condition(group) for _, group in grouped]
+            # test_df = pd.concat(filtered_groups)
             test_df = test_df[self.model.feature_name_]
             predict_result = self.model.predict_proba(test_df)
 
