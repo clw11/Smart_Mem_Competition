@@ -1303,8 +1303,8 @@ class MFPmodel(object):
             # grouped = test_df.groupby('sn')
             # filtered_groups = [self.filter_condition(group) for _, group in grouped]
             # test_df = pd.concat(filtered_groups)
-            test_df = test_df[self.model.feature_name_]
-            predict_result = self.model.predict_proba(test_df)
+            test_df = test_df[self.model_stage2.feature_name_]
+            predict_result = self.model_stage2.predict_proba(test_df)
 
             index_list = list(test_df.index)
             for i in tqdm(range(len(index_list))):
